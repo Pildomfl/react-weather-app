@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
@@ -27,15 +27,13 @@ export default function Weather(props) {
   }
   function search() {
     const apiKey = "9eca7aac0b071aa16e3cb063adba0785";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleCityChange(event) {
     setCity(event.target.value);
   }
-  useEffect(() => {
-    search();
-  }, []);
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
