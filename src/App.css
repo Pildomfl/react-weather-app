@@ -2,6 +2,7 @@
   max-width: 700px;
   margin: 30px auto;
   background: #faeee7;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .App footer {
